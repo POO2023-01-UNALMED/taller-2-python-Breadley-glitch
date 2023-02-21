@@ -14,14 +14,14 @@ class Auto:
         numeroAsientos = 0
 
         for asiento in self.asientos:
-            if isinintance(asiento, Asiento):
+            if isinstance(asiento, Asiento):
                 numeroAsientos +=1
 
         return numeroAsientos
 
     def verficarIntegridad(self):
         for asiento in self.asientos:
-            if asiento != NONE:
+            if asiento != None:
                 if asiento.registro != self.registro:
                     return "Las piezas no son originales"
 
@@ -52,7 +52,7 @@ class Motor:
     def cambiarRegistro(self, registro):
         self.registro = registro
 
-    def asignarTipo(self,tipo):
+    def asignarTipo(self, tipo):
         types = ["electrico", "gasolina"]
         if tipo in types:
             self.tipo = tipo
